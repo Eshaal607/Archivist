@@ -14,7 +14,15 @@ const Card = (({img, description }) => {
 })
 
 function App() {
+  
   const [count, setCount] = useState(0)
+
+  function handleclick(){
+    console.log("I was clicked")
+  }
+  function handlemouseOver(){
+    console.log("I was hovered")
+  }
 
   return (
     <>
@@ -24,11 +32,11 @@ function App() {
           <p className='liner'>Every story leads to another</p>
         </section>
 
-        <div className='question-card'>
+        <div onMouseOver={handlemouseOver}  className='question-card'>
           <h2 className='question'>Choose Your Path</h2>
         </div>
 
-        <div className='cards'>
+        <div onClick={handleclick} className='cards'>
           <Card img={searchIcon}
             description={"Similar to one you loved"}
           />
